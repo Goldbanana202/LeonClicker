@@ -1,0 +1,38 @@
+.sClickPower {
+    display: flex;
+    align-items: center;
+    gap: 37px;
+}
+
+.ClickPowerFlag {
+    margin: 0;
+}
+
+#bClickPower {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sLeonClicker {
+    display: flex;
+    align-items: center;
+    gap: 37px;
+}
+
+.sLeonCLickerFlag {
+    margin: 0;
+}
+
+#bLeonClicker {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#Leon {
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#Leon:active {
+    transform: scale(0.9);
+}

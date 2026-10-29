@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonclicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">LEON CLICKER</h1>  
+    <p style="text-align: center; font-size: larger;" id="pCoinsCount"></p>
+    <img onclick="uClick()" id="Leon" style="display: flex; margin: auto;" src="Images/LeonClick.png" alt="Leon Clicker">
+
+    <script>
+        let LeonCoin = 0
+        let ClickPower = 1
+        let UnlockClickPower = false
+        let UnlockLeonClicker = false
+        let ClickPowerPrice = 30
+        let LeonClickerPrice = 80
+
+        document.getElementById("pCoinsCount").innerHTML = "Leoncoins: " + LeonCoin;
+        // When Leon is Clicked this will happen:
+        function uClick() {
+            // Leon coin is increased by the click power
+            LeonCoin = LeonCoin + ClickPower;
+            // Output the LeonCoin
+            document.getElementById("pCoinsCount").innerHTML = "Leoncoins: " + LeonCoin;
+            
+            //###################### Upgrades become visable ######################
+
+            // Upgrades Become visable after goals are met
+            if (LeonCoin >= 5) {
+                UnlockClickPower = true
+                if (UnlockClickPower = true) {
+                    // make button visable
+                    bClickPower.hidden = false;
+                    document.getElementById("pClickPowerPrice").innerHTML = "Costs " + ClickPowerPrice + " Leoncoins";
+                } }
+            
+            if (LeonCoin >= 50) {
+                Unlock2 = true
+                if (UnlockLeonClicker =  true) {
+                    bLeonClicker.hidden = false
+                    document.getElementById("pLeonClickerPrice").innerHTML = "Costs " + LeonClickerPrice + " Leoncoins";
+                }
+            }
+        }
+        
+        //###################### UPGRADES ######################
+        function fClickPower() {
+            if (LeonCoin >= ClickPowerPrice) {
+                ClickPower++;
+                LeonCoin = LeonCoin - ClickPowerPrice;
+                ClickPowerPrice = ClickPowerPrice * 1.40;
+                ClickPowerPrice = Math.round(ClickPowerPrice)
+                document.getElementById("pCoinsCount").innerHTML = "Leoncoins: " + LeonCoin;
+                document.getElementById("pClickPowerPrice").innerHTML = "Costs " + ClickPowerPrice + " Leoncoins";
+            } else {
+                ClickPowerFlag.hidden = false
+                setTimeout(hide, 1000)
+                function hide() {
+                    ClickPowerFlag.hidden = true;
+                }
+            }
+        }
+
+        function fLeonClicker(){
+            if (LeonCoin >= LeonClickerPrice) {
+                // test
+            }
+        }
+    </script>
+
+    <h1 style="text-align: center;">Upgrades</h1>
+    
+    <div class="sClickPower">
+    <div><button style="margin-left: 40%;" onclick="fClickPower()" id="bClickPower" hidden>Click Power</button></div>
+        
+    <div><p id="pClickPowerPrice"></p></div>
+        
+    <p id="ClickPowerFlag" style="color: red;" hidden>Insufficient Coins</p>
+    </div>
+    <!--  -->
+    <div class="sLeonClicker">
+    <div><button style="margin-left: 40%;" onclick="fLeonClicker()" id="bLeonClicker" hidden>Leon Clicker</button></div>
+        
+    <div><p id="pLeonClickerPrice"></p></div>
+        
+    <p id="LeonClickerFlag" style="color: red;" hidden>Insufficient Coins</p>  
+    </div>
+</body>
+</html>

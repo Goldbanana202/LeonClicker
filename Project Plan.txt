@@ -1,0 +1,6 @@
+Leon Clicker is a personal project to hone my skills as a developer and to improve my ability to code in javascript and a lack of backend development.
+
+Leon Clicker is a SPA that will encourage the user to click an image of my dear friend Leon and will be rewarded with LeonCoins that allow the user to exchange for "upgrades".
+Upgrades will allow the user to collect LeonCoins quicker and even passively without clicking.
+
+The scope of this project is incredibly small as I am only intending to use it as a concept to help me learn javascript. However, this scope can be increased as my likeness to the project increases.
